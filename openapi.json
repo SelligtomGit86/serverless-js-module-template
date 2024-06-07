@@ -27,6 +27,24 @@
           "$ref": "#/components/x-cloud-apim-plugins/jsdemoplugin"
         }
       }
+    },
+    "/todos-demo": {
+      "get": {
+        "summary": "",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getTodosModule",
+        "tags": [],
+        "responses": {},
+        "parameters": [],
+        "requestBody": null,
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/todosplugin"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/jsdemobackend"
+        }
+      }
     }
   },
   "components": {
@@ -37,6 +55,15 @@
           "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
           "config": {
             "module": "/modules/hello.js"
+          }
+        }
+      ],
+      "todosplugin": [
+        {
+          "enabled": true,
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "config": {
+            "module": "/modules/todos-module.js"
           }
         }
       ]
@@ -53,6 +80,8 @@
         "root": "/",
         "rewrite": false
       }
-    }
+    },
+    "schemas": {},
+    "x-cloud-apim-frontends": {}
   }
 }
