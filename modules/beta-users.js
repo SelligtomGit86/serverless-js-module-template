@@ -1,11 +1,11 @@
 exports.on_backend_call = function (ctx) {
-  if (ctx.request.apikey.metadata.includes("beta-tester") && ctx.request.apikey.metadata["beta-tester"]) {
+  if (ctx.apikey.metadata.includes("beta-tester") && ctx.request.apikey.metadata["beta-tester"]) {
     return {
       status: 200,
       headers: {
         'Content-Type': 'application/json'
       },
-      body_json: { requestedBy: ctx.request.apikey }
+      body_json: { requestedBy: ctx.apikey }
     }
   } else {
     return {
