@@ -1,5 +1,5 @@
 exports.on_backend_call = function (ctx) {
-  if (ctx.apikey.metadata.includes("beta-tester") && ctx.request.apikey.metadata["beta-tester"]) {
+  if (ctx.apikey.metadata.includes("beta-tester") && ctx.apikey.metadata["beta-tester"]) {
     return {
       status: 200,
       headers: {
