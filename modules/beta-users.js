@@ -13,7 +13,7 @@ exports.on_backend_call = function (ctx) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body_json: { warning: "You are not registered for our beta ! Please register here : ................." }
+      body_json: { warning: "You are not registered for our beta ! Please register here : .................", key: ctx.apikey }
     }
   }
 };
