@@ -45,6 +45,22 @@
           "$ref": "#/components/x-cloud-apim-backends/jsdemobackend"
         }
       }
+    },
+    "/route-1718003945171": {
+      "get": {
+        "summary": "",
+        "deprecated": false,
+        "description": "",
+        "operationId": "",
+        "tags": [],
+        "responses": {},
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -66,6 +82,18 @@
             "module": "/modules/todos-module.js"
           }
         }
+      ],
+      "defaultPlugins": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "enabled": true,
+          "config": {}
+        }
       ]
     },
     "x-cloud-apim-backends": {
@@ -79,6 +107,17 @@
         ],
         "root": "/",
         "rewrite": false
+      },
+      "defaultBackend": {
+        "root": "/",
+        "rewrite": false,
+        "targets": [
+          {
+            "hostname": "jsonplaceholder.typicode.com",
+            "port": 443,
+            "tls": true
+          }
+        ]
       }
     },
     "schemas": {},
