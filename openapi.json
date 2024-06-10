@@ -61,6 +61,22 @@
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
         }
       }
+    },
+    "/beta-users": {
+      "get": {
+        "summary": "",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getBetaUsers",
+        "tags": [],
+        "responses": {},
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -93,6 +109,15 @@
           "plugin": "cp:otoroshi.next.plugins.OverrideHost",
           "enabled": true,
           "config": {}
+        },
+        {
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "enabled": true,
+          "include": [],
+          "exclude": [],
+          "config": {
+            "module": "/modules/beta-users.js"
+          }
         }
       ]
     },
