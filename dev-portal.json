@@ -5,11 +5,7 @@
   "examples": true,
   "icon": "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path": "/docs",
-  "max_user_created_apikeys": 1,
-  "monetisation": {
-    "enabled": false,
-    "provider": "stripe"
-  },
+  "max_user_created_apikeys": 100,
   "plans": [
     {
       "id": "default",
