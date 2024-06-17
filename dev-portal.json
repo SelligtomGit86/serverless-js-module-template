@@ -16,9 +16,9 @@
       "name": "default",
       "default": true,
       "description": "The default apikey plan",
-      "throttling": 10,
-      "daily": "100",
-      "monthly": "3000"
+      "throttling": 2,
+      "daily": "20",
+      "monthly": "500"
     },
      {
       "id": "premium",
